@@ -1,5 +1,7 @@
 import { signIn, useSession } from 'next-auth/react'
 import { ButtonHTMLAttributes } from 'react'
+import { api } from '../../services/api'
+import { getStripeJs } from '../../services/stripe-js'
 import styles from './styles.module.scss'
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -20,7 +22,17 @@ export default function SubscribeButton({
       return
     }
 
+    try {
+      const response = await api.post('/subscribe')
 
+      const { sessionId } = response.data
+
+      const stripe = await getStripeJs()
+
+      await stripe.redirectToCheckout({ sessionId })
+    } catch (err) {
+      alert(err.message)
+    }
   }
 
   return (
