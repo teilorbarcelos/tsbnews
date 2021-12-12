@@ -42,4 +42,11 @@
       margin-top: 2.5rem;
     }
   }
+
+  @media screen and (max-width: 720px) {
+    padding: 4rem 1rem;
+    img {
+      display: none;
+    }
+  }
 }

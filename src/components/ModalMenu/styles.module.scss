@@ -1,0 +1,23 @@
+.modalMenu {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: var(--gray-900);
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+
+  transition: 0.2s;
+
+  &.visible {
+    visibility: visible;
+    opacity: 1;
+  }
+}
