@@ -17,3 +17,13 @@
     filter: brightness(0.8);
   }
 }
+
+.a {
+  color: var(--yellow-500);
+  margin-left: 0.5rem;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

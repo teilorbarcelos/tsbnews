@@ -48,6 +48,7 @@ export const getStaticProps: GetStaticProps = async () => { // para SSG (Static)
       currency: 'USD'
     }).format(price.unit_amount / 100)
   }
+
   return {
     props: {
       product
