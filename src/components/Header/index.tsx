@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import ActiveLink from '../ActiveLink'
 import SignInButton from '../SignInButton'
 import styles from './styles.module.scss'
 
@@ -8,12 +8,18 @@ export function Header() {
       <div>
         <img src="/images/logo.svg" alt="tsb.news logo" />
         <nav>
-          <Link href="/">
-            <a className={styles.active}>Home</a>
-          </Link>
-          <Link href="/posts">
+          <ActiveLink
+            href="/"
+            activeClassName={styles.active}
+          >
+            <a>Home</a>
+          </ActiveLink>
+          <ActiveLink
+            href="/posts"
+            activeClassName={styles.active}
+          >
             <a>Posts</a>
-          </Link>
+          </ActiveLink>
         </nav>
         <SignInButton />
       </div>
